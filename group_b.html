@@ -9,8 +9,19 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">Ομάδα Α</a>
-    <a href="group_b.html" class="active">Ομάδα Β</a>
+    <div></div>
+    <div class="nav-center">
+      <a href="index.html">Ομάδα Α</a>
+      <a href="group_b.html" class="active">Ομάδα Β</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Μενού">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-dropdown" id="navDropdown">
+        <a href="46_BOHTHOS_NOSHLEYTIKHS_GENIKHS_NOSHLEIAS.pdf" target="_blank" rel="noopener">Κατάλογος Ερωτήσεων ΕΟΠΠΕΠ</a>
+      </div>
+    </div>
   </nav>
   <header>
     <h1>Ομάδα Β – Ειδικές Ερωτήσεις &amp; Απαντήσεις</h1>
@@ -31,7 +42,7 @@
       ☕ Αν σου φάνηκε χρήσιμη η σελίδα, κέρασέ με έναν καφέ!
       <button class="bmc-close" id="bmcClose" title="Κλείσιμο">✕</button>
     </div>
-    <a href="https://www.buymeacoffee.com/markes12" target="_blank" rel="noopener" class="bmc-btn">
+    <a href="https://www.buymeacoffee.com/YOUR_USERNAME" target="_blank" rel="noopener" class="bmc-btn">
       <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
       Buy me a coffee
     </a>
@@ -43,5 +54,16 @@
   </script>
 
   <script src="script_b.js" defer></script>
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const drop = document.getElementById('navDropdown');
+    btn.addEventListener('click', () => drop.classList.toggle('open'));
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) drop.classList.remove('open');
+    });
+    document.addEventListener('click', e => {
+      if (!btn.contains(e.target) && !drop.contains(e.target)) drop.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
