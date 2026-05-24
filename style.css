@@ -180,11 +180,67 @@ main {
 }
 
 /* ── Buy Me a Coffee ── */
-.bmc-btn {
+.bmc-wrapper {
   position: fixed;
   bottom: 1.5rem;
   left: 1.5rem;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bmc-bubble {
+  background: #fff;
+  color: #1e3c72;
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  max-width: 200px;
+  line-height: 1.4;
+  position: relative;
+  animation: bmc-bounce 3s ease-in-out infinite;
+}
+
+/* Triangle pointing down toward the button */
+.bmc-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 1.4rem;
+  border-width: 8px 7px 0 7px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Dismiss button */
+.bmc-bubble .bmc-close {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #999;
+  line-height: 1;
+  padding: 0;
+}
+.bmc-bubble .bmc-close:hover { color: #333; }
+
+.bmc-bubble.hidden,
+.bmc-wrapper.hidden .bmc-bubble { display: none; }
+
+@keyframes bmc-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+.bmc-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
