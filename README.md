@@ -25,7 +25,7 @@
 ├── script_a.js                                      # Δεδομένα & λογική Ομάδας Α (256 ερωτήσεις)
 ├── script_b.js                                      # Δεδομένα & λογική Ομάδας Β (49 ερωτήσεις)
 ├── style.css                                        # Κοινό stylesheet και των δύο σελίδων
-└── 46_BOHTHOS_NOSHLEYTIKHS_GENIKHS_NOSHLEIAS        # Κοινό stylesheet και των δύο σελίδων
+└── 46_BOHTHOS_NOSHLEYTIKHS_GENIKHS_NOSHLEIAS        # Κατάλογος με τις ερωτήσεις του ΕΟΠΠΕΠ για την ειδικότητα της Βοηθού Νοσηλευτικής Γενικής Νοσηλείας
 
 ```
 
