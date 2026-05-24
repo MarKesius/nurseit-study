@@ -178,3 +178,35 @@ main {
   font-size: 1rem;
   margin-top: 2rem;
 }
+
+/* ── Buy Me a Coffee ── */
+.bmc-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFDD00;
+  color: #000000;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.bmc-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.45);
+}
+
+.bmc-btn img {
+  width: 22px;
+  height: 22px;
+}
