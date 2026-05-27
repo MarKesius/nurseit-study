@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Κουίζ Νοσηλευτικής</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div></div>
+    <div class="nav-center">
+      <a href="index.html">Ομάδα Α</a>
+      <a href="group_b.html">Ομάδα Β</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Μενού">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-dropdown" id="navDropdown">
+        <a href="quizzes.html" class="active">Κουίζ</a>
+        <a href="46_BOHTHOS_NOSHLEYTIKHS_GENIKHS_NOSHLEIAS.pdf" target="_blank" rel="noopener">Κατάλογος Ερωτήσεων ΕΟΠΠΕΠ</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Βοηθός Νοσηλευτικής - Γενικής Νοσηλείας</h1>
+    <p class="subtitle">Επιλέξτε ένα Κουίζ</p>
+  </header>
+
+  <div class="disclaimer">
+    <div class="disclaimer-icon">⚠️</div>
+    <div class="disclaimer-body">
+      <div class="disclaimer-title">Σημαντική Σημείωση</div>
+      <p style="margin:0 0 0.5rem">Το περιεχόμενο της πλατφόρμας <strong>παράγεται με χρήση Τεχνητής Νοημοσύνης (AI)</strong> και <strong>δεν βασίζεται σε επίσημα εγχειρίδια</strong> ή έγκριση από πιστοποιημένους εκπαιδευτές ή τον ΕΟΠΠΕΠ.</p>
+      <p style="margin:0">Το περιεχόμενο παρέχεται <strong>αποκλειστικά ως βοήθημα μελέτης</strong> και <strong>δεν υποκαθιστά</strong> την εκπαιδευτική διαδικασία που προσφέρεται από ΙΕΚ ή άλλους επίσημους φορείς.</p>
+    </div>
+  </div>
+
+  <main id="quizList"></main>
+
+  <div class="bmc-wrapper" id="bmcWrapper">
+    <div class="bmc-bubble" id="bmcBubble">
+      ☕ Αν σου φάνηκε χρήσιμη η σελίδα, κέρασέ με έναν καφέ!
+      <button class="bmc-close" id="bmcClose" title="Κλείσιμο">✕</button>
+    </div>
+    <a href="https://www.buymeacoffee.com/markes12" target="_blank" rel="noopener" class="bmc-btn">
+      <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+      Buy me a coffee
+    </a>
+  </div>
+
+  <script src="quizzes.js" defer></script>
+  <script>
+    const close = document.getElementById('bmcClose');
+    const bubble = document.getElementById('bmcBubble');
+    const btn = document.getElementById('menuBtn');
+    const drop = document.getElementById('navDropdown');
+
+    close.addEventListener('click', () => {
+      bubble.style.display = 'none';
+    });
+
+    btn.addEventListener('click', () => {
+      const isOpen = drop.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        drop.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (!btn.contains(e.target) && !drop.contains(e.target)) {
+        drop.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
